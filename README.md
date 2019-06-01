@@ -1,2 +1,6 @@
 # algoholics-anon
-algorithms and data structures
+## [Algorithms](../algorithms)
+
+## [Data structures](../data-structures)
+
+
