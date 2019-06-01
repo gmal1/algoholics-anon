@@ -1,6 +1,6 @@
 # algoholics-anon
-## [Algorithms](../algorithms)
+## [Algorithms](../tree/master/algorithms)
 
-## [Data structures](../data-structures)
+## [Data structures](../tree/master/data-structures)
 
 
