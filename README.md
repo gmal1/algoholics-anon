@@ -11,5 +11,5 @@
 * [linked list](../master/data-structures/LinkedList.js)
 * [min heap](../master/data-structures/minHeap.ts)
 
-## Common interview questions
+## Interview questions
 * [Apple stocks](../master/interview-questions/maxProfitCalc.js)
