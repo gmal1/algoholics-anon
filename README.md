@@ -12,4 +12,4 @@
 * [min heap](../master/data-structures/minHeap.ts)
 
 ## Interview questions
-* [Apple stocks](../master/interview-questions/maxProfitCalc.js)
+* [apple stocks](../master/interview-questions/maxProfitCalc.js)
