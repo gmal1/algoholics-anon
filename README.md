@@ -13,6 +13,8 @@
 * [linked list](../master/data-structures/LinkedList.js)
 * [min heap](../master/data-structures/minHeap.ts)
 * [max heap](../master/dailyTasks/maxHeap.ts)
+* [randomized queue](../master/data-structures/RandomizedQueue.ts)
+* [deque](../master/data-structures/Deque.ts)
 
 ## Interview questions
 * [apple stocks](../master/interview-questions/maxProfitCalc.js)
