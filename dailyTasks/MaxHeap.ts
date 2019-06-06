@@ -1,4 +1,4 @@
-class maxHeap {
+class MaxHeap {
   arr: number[];
   constructor() {
     this.arr = [null];
@@ -13,7 +13,7 @@ class maxHeap {
     const max = this.arr[1];
     this.arr[1] = this.arr[this.arr.length - 1];
     this.arr.pop();
-    this.sink(this.arr[1]);
+    this.sink(1);
     return max;
   }
 
@@ -24,7 +24,7 @@ class maxHeap {
       const child2 = this.arr[idx * 2 + 1];
       let swapIdx = null;
       if (child1 > cand) {
-        swapIdx = idx / 2;
+        swapIdx = idx * 2;
       }
       if (child2 > child1) {
         swapIdx++;
@@ -51,3 +51,5 @@ class maxHeap {
     }
   }
 }
+
+module.exports = MaxHeap;

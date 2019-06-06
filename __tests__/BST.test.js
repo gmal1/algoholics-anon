@@ -2,6 +2,7 @@ const BST = require('../dailyTasks/BST.js');
 const util = require('util'); // node core module used for console logs of deeply nested objects
 
 describe('BST tests', () => {
+  // REPEATS NOT ALLOWED IN THESE BSTs
   const arr0 = [];
   const arr1 = [10];
   const arr2 = [1, 4, 5, 6, 2, 10, 3, 17, 0];
