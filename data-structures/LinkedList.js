@@ -69,7 +69,7 @@ class LinkedList {
   removeItem(value) {
     // remove first occurrence of value from list
     let current = this.head;
-    let prev;
+    let prev = null;
     while (current) {
       if (current.value === value) {
         if (current === this.head) {
@@ -116,6 +116,7 @@ class LinkedList {
   }
 }
 
-const list = new LinkedList(1, 2, 3, 4);
-list.removePosition(2);
-console.log(JSON.stringify(list, null, 4));
+// const list = new LinkedList(1, 2, 3, 4);
+// list.removePosition(2);
+// console.log(JSON.stringify(list, null, 4));
+module.exports = LinkedList;

@@ -1,10 +1,13 @@
-import Deque from '../data-structures/Deque';
+// import Deque from '../data-structures/Deque.js';
+const Deque = require('../data-structures/Deque.js');
 
 describe('Deque', () => {
-  let deque: Deque<number>;
+  // let deque: Deque<number>;
+  let deque;
 
   beforeEach(() => {
-    deque = new Deque<number>();
+    // deque = new Deque<number>();
+    deque = new Deque();
   });
 
   describe('push method', () => {
@@ -23,7 +26,7 @@ describe('Deque', () => {
     test('should add item to front of deque', () => {
       deque.push(5);
       expect(deque.at(0)).toEqual(5);
-    })
+    });
 
     test('should work with push', () => {
       deque.push(1);
@@ -72,7 +75,7 @@ describe('Deque', () => {
       }
 
       expect(deque.shift()).toEqual(null);
-    })
+    });
   });
 
   describe('pop method', () => {
@@ -113,12 +116,12 @@ describe('Deque', () => {
       deque.unshift(10);
       expect(deque.isEmpty()).toBe(false);
     });
-  })
+  });
 
   describe('Iterator', () => {
     test('should iterate correctly', () => {
       let testOutput = '';
-      for (let i  = 0; i < 10; i += 1) {
+      for (let i = 0; i < 10; i += 1) {
         const coinToss = Math.random();
         const randItem = Math.floor(Math.random() * 10);
         if (coinToss < 0.5) {
@@ -132,11 +135,10 @@ describe('Deque', () => {
 
       let output = '';
       for (let value of deque) {
-        output += `${value}`
+        output += `${value}`;
       }
 
       expect(output).toEqual(testOutput);
-
     });
   });
 });
