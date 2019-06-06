@@ -15,7 +15,7 @@ BST with 4 methods:
   -max: return max element in BST
   -min: returns min element in BST
 
-Inerstion sort:
+Insertion sort:
   -assemble a sorted set as a pointer makes a single scan across the array
 
 Merge sort:
