@@ -1,5 +1,5 @@
-// import Deque from '../data-structures/Deque.js';
-const Deque = require('../data-structures/Deque.js');
+import Deque from '../data-structures/Deque';
+// const Deque = require('../data-structures/Deque.js');
 
 describe('Deque', () => {
   // let deque: Deque<number>;
