@@ -15,7 +15,7 @@ function hashFunc(string, size) {
 class HashTable {
   constructor() {
     this.SIZE = 16;
-    this.storage = new Array(this.SIZE);
+    this.storage = new Array(this.SIZE).fill(undefined);
     this.numberOfItems = 0;
   }
 
@@ -38,8 +38,16 @@ class HashTable {
       this.storage[hashIndex] = {};
     }
 
+    // only increment numItems if not overwriting
+    if (!this.storage[hashIndex][key]) {
+      this.numberOfItems += 1;
+    }
     this.storage[hashIndex][key] = value;
-    this.numberOfItems += 1;
+
+    if (this.numberOfItems >= this.SIZE / 4) {
+      this.resize();
+    }
+
     return this.numberOfItems;
   }
 
@@ -81,4 +89,23 @@ class HashTable {
     }
     return undefined;
   }
+
+  resize() {
+    this.SIZE = this.SIZE * 2;
+    const newStorage = new Array(this.SIZE).fill(undefined);
+    for (const bucket of this.storage) {
+      if (bucket === undefined) continue;
+      for (const [key, value] of Object.entries(bucket)) {
+        const hashIndex = hashFunc(key, this.SIZE);
+        if (!newStorage[hashIndex]) {
+          newStorage[hashIndex] = {};
+        }
+        newStorage[hashIndex][key] = value;
+      }
+    }
+
+    this.storage = newStorage;
+  }
 }
+
+module.exports = HashTable;
