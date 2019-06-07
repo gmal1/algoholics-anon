@@ -18,16 +18,19 @@ describe('max heap tests', () => {
 
   it('pushing many nodes works', () => {
     const testHeap = new MaxHeap();
-    for (let el of arr2) {
+    for (const el of arr2) {
       testHeap.push(el);
     }
-    const options = [{ arr: [null, 17, 10, 6, 5, 10, 4, 3, 1, 0, 2] }, { arr: [17, 10, 6, 5, 10, 4, 3, 1, 0, 2] }];
+    const options = [
+      { arr: [null, 17, 10, 6, 5, 10, 4, 3, 1, 0, 2] },
+      { arr: [17, 10, 6, 5, 10, 4, 3, 1, 0, 2] },
+    ];
     expect(options).toContainEqual(testHeap);
   });
 
   it('delMax returns max element', () => {
     const testHeap = new MaxHeap();
-    for (let el of arr2) {
+    for (const el of arr2) {
       testHeap.push(el);
     }
     expect(testHeap.delMax()).toBe(17);
@@ -35,11 +38,14 @@ describe('max heap tests', () => {
 
   it('delMax successfully re-heapifies the array', () => {
     const testHeap = new MaxHeap();
-    for (let el of arr2) {
+    for (const el of arr2) {
       testHeap.push(el);
     }
     testHeap.delMax();
-    const options = [{ arr: [null, 10, 10, 6, 5, 2, 4, 3, 1, 0] }, { arr: [10, 10, 6, 5, 2, 4, 3, 1, 0] }];
+    const options = [
+      { arr: [null, 10, 10, 6, 5, 2, 4, 3, 1, 0] },
+      { arr: [10, 10, 6, 5, 2, 4, 3, 1, 0] },
+    ];
     expect(options).toContainEqual(testHeap);
   });
 });

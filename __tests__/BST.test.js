@@ -1,5 +1,5 @@
-const BST = require('../dailyTasks/BST.js');
 const util = require('util'); // node core module used for console logs of deeply nested objects
+const BST = require('../dailyTasks/BST.js');
 
 describe('BST tests', () => {
   // REPEATS NOT ALLOWED IN THESE BSTs
@@ -7,7 +7,7 @@ describe('BST tests', () => {
   const arr1 = [10];
   const arr2 = [1, 4, 5, 6, 2, 10, 3, 17, 0];
   const testTree = new BST(12);
-  for (let el of arr2) {
+  for (const el of arr2) {
     testTree.add(el);
   }
 
@@ -18,7 +18,11 @@ describe('BST tests', () => {
   it('can add new node', () => {
     const testTree = new BST(12);
     testTree.add(10);
-    expect(testTree).toEqual({ val: 12, left: { val: 10, left: null, right: null }, right: null });
+    expect(testTree).toEqual({
+      val: 12,
+      left: { val: 10, left: null, right: null },
+      right: null,
+    });
   });
 
   it('can add lots of new nodes', () => {

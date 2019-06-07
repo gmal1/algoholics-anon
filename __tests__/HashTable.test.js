@@ -6,7 +6,11 @@ describe('hash table tests', () => {
 
   it('constructor returns a hash table', () => {
     const newTable = new HashTable();
-    expect(newTable).toEqual({ SIZE: 16, storage: new Array(16), numberOfItems: 0 });
+    expect(newTable).toEqual({
+      SIZE: 16,
+      storage: new Array(16),
+      numberOfItems: 0,
+    });
   });
 
   it('can add elements', () => {
@@ -16,7 +20,9 @@ describe('hash table tests', () => {
     });
     expect(newTable).toEqual({
       SIZE: 16,
-      storage: [{ '0': 4, '1': 12, '2': 0 }].concat(new Array(15).fill(undefined, 1, 16)),
+      storage: [{ '0': 4, '1': 12, '2': 0 }].concat(
+        new Array(15).fill(undefined, 1, 16)
+      ),
       numberOfItems: 3,
     });
   });
