@@ -9,14 +9,13 @@ function shellSort(array) {
     for (let i = h; i < N; i += 1) {
       // Modified insertion sort
       for (let j = i; j >= h && array[j] < array[j - h]; j -= h) {
-        const temp = array[j];
-        array[j] = array[j - h];
-        array[j - h] = temp;
+        [array[j], array[j - h]] = [array[j - h], array[j]];
       }
     }
 
     h = Math.floor(h / 3); // Move to next increment
   }
+  return array;
 }
 
 function genRandArray(max, size) {
