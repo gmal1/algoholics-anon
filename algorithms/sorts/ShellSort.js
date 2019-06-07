@@ -30,4 +30,4 @@ function genRandArray(max, size) {
   return output;
 }
 
-export default shellSort;
+module.exports = shellSort;
