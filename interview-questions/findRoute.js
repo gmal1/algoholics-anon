@@ -33,3 +33,5 @@ function search(graph, start, end) {
   }
   return false;
 }
+
+module.exports = search;
