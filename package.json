@@ -4,7 +4,8 @@
   "description": "algos yo",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "test:coverage": "npm test -- --coverage"
   },
   "repository": {
     "type": "git",

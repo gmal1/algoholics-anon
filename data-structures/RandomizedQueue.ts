@@ -1,8 +1,9 @@
+// doubly linked list with random insetion and random sampling
 class RandomizedQueue<T> {
   head: Item<T>;
   tail: Item<T>;
   numItems: number;
-  
+
   constructor() {
     this.head = null;
     this.tail = null;
@@ -10,7 +11,7 @@ class RandomizedQueue<T> {
   }
 
   isEmpty(): boolean {
-    return this.head = null;
+    return this.head === null;
   }
 
   size(): number {
@@ -34,7 +35,7 @@ class RandomizedQueue<T> {
 
     let randomIndex = Math.floor(Math.random() * this.numItems);
     let current = this.head;
-    while(randomIndex > 0) {
+    while (randomIndex > 0) {
       current = current.next;
       randomIndex -= 1;
     }
@@ -57,7 +58,7 @@ class RandomizedQueue<T> {
   sample(): T {
     let randomIndex = Math.floor(Math.random() * this.numItems);
     let current = this.head;
-    while(randomIndex > 0) {
+    while (randomIndex > 0) {
       current = current.next;
       randomIndex -= 1;
     }

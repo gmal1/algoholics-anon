@@ -29,7 +29,7 @@ class Deque<T> {
     if (index < 0 || index >= this.numItems) return null;
     let current: Item<T> = this.head;
 
-    while(index > 0) {
+    while (index > 0) {
       current = current.next;
       index -= 1;
     }
@@ -91,15 +91,15 @@ class Deque<T> {
     } else {
       this.tail.next = null;
     }
-    
+
     this.numItems -= 1;
-    
+
     return last.value;
   }
 
   *[Symbol.iterator]() {
     let current = this.head;
-    while(current) {
+    while (current) {
       yield current.value;
       current = current.next;
     }
@@ -119,3 +119,4 @@ class Item<T> {
 }
 
 export default Deque;
+// module.exports = Deque;
