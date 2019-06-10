@@ -20,3 +20,4 @@
 ## Interview questions
 * [apple stocks](../master/interview-questions/maxProfitCalc.js)
 * [find shortest route in directed graph](../master/interview-questions/findRoute.js)
+* [construct a BST of minimal height](../master/interview-questions/minHeightBST.js)
