@@ -10,9 +10,11 @@ class LinkedList {
   constructor(...nodes) {
     this.head = null;
     this.tail = null;
+    this.length = 0;
 
     for (const node of nodes) {
       this.push(node);
+      this.length += 1;
     }
   }
 
@@ -26,6 +28,7 @@ class LinkedList {
       this.tail.next = newNode;
       this.tail = newNode;
     }
+    this.length += 1;
   }
 
   contains(value) {
@@ -43,6 +46,7 @@ class LinkedList {
     const newNode = new Node(value);
     newNode.next = this.head;
     this.head = newNode;
+    this.length += 1;
   }
 
   insert(value, position) {
@@ -64,6 +68,7 @@ class LinkedList {
     } else {
       this.head = newNode;
     }
+    this.length += 1;
   }
 
   removeItem(value) {
@@ -84,6 +89,7 @@ class LinkedList {
       prev = current;
       current = current.next;
     }
+    this.length -= 1;
   }
 
   removePosition(position) {
@@ -98,25 +104,30 @@ class LinkedList {
       depth += 1;
     }
 
-    if (depth === position) {
-      // if the node to be removed is the head
-      // reassign the head
-      if (current === this.head) {
-        this.head = this.head.next;
+    while (current) {
+      if (depth === position) {
+        // if the node to be removed is the head
+        // reassign the head
+        if (this.head && current === this.head) {
+          this.head = this.head.next;
+        }
+        // ditto tail
+        if (this.tail && current === this.tail) {
+          this.tail = previous;
+          this.tail.next = null;
+        } else {
+          // node to be removed is in the middle of list
+          previous.next = current.next;
+        }
       }
-      // ditto tail
-      if (current === this.tail) {
-        this.tail = previous;
-        this.tail.next = null;
-      } else {
-        // node to be removed is in the middle of list
-        previous.next = current.next;
-      }
+      this.length -= 1;
+      return current;
     }
+  }
+
+  getLength() {
+    return this.length;
   }
 }
 
-// const list = new LinkedList(1, 2, 3, 4);
-// list.removePosition(2);
-// console.log(JSON.stringify(list, null, 4));
 module.exports = LinkedList;

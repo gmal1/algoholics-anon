@@ -15,6 +15,9 @@
 * [max heap](../master/dailyTasks/maxHeap.ts)
 * [randomized queue](../master/data-structures/RandomizedQueue.ts)
 * [deque](../master/data-structures/Deque.ts)
+* [graph](../master/data-structures/Graph.js)
 
 ## Interview questions
 * [apple stocks](../master/interview-questions/maxProfitCalc.js)
+* [find shortest route in directed graph](../master/interview-questions/findRoute.js)
+* [construct a BST of minimal height](../master/interview-questions/minHeightBST.js)
