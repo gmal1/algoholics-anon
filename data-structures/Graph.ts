@@ -1,5 +1,3 @@
-import { nodeInternals } from "stack-utils";
-
 class Graph<T> {
   nodes: Map<String, Vertex<T>>;
   directed: boolean;
@@ -18,8 +16,12 @@ class Graph<T> {
     this.nodes.set(vertex, newVertex);
   }
 
-  removeVertex() {
-
+  removeVertex(vertex: String): T {
+    if (this.nodes.has(vertex)) {
+      for (const v of this.nodes.values()) {
+        
+      }
+    }
   }
 
   addEdge() {
