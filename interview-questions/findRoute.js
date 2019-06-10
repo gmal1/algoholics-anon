@@ -1,8 +1,6 @@
 // given a directed graph and two nodes, find out whether
 // there exists a route between the two nodes
 
-const Graph = require('../data-structures/Graph');
-
 function search(graph, start, end) {
   // cast both params into strings
   start = start.toString();
