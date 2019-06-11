@@ -1,16 +1,17 @@
 def kth_to_last(head, pos):
     scout = head
-    while (pos > 0):
-        if not scout: return None
+    while pos > 0:
+        if not scout:
+            return None
         scout = scout.next
         pos -= 1
 
-
-    while (scout):
+    while scout:
         head = head.next
         scout = scout.next
 
     return head.val
+
 
 class Node:
     def __init__(self, val):

@@ -3,7 +3,7 @@ def partition(h, part):
     tail = head
 
     current = h.next
-    
+
     while current:
         curr_val = current.val
         node = Node(curr_val)
@@ -18,10 +18,12 @@ def partition(h, part):
 
     return head
 
+
 class Node:
     def __init__(self, val):
         self.val = val
         self.next = None
+
 
 head = Node(3)
 head.next = Node(5)
