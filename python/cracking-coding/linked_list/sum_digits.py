@@ -33,14 +33,22 @@ class Node:
         self.val = val
         self.next = None
 
-l1 = Node(7)
-l1.next = Node(1)
-l1.next.next = Node(6)
+# l1 = Node(7)
+# l1.next = Node(1)
+# l1.next.next = Node(6)
 
-l2 = Node(5)
+# l2 = Node(5)
+# l2.next = Node(9)
+# l2.next.next = Node(2)
+# l2.next.next.next = Node()
+
+l1 = Node(6)
+l1.next = Node(1)
+l1.next.next = Node(7)
+
+l2 = Node(2)
 l2.next = Node(9)
-l2.next.next = Node(2)
-l2.next.next.next = Node()
+l2.next.next = Node(5)
 
 output = sum_digits(l1, l2)
 current = output
