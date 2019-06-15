@@ -1,13 +1,18 @@
+// tsconfig from chrome team, minus strict rule, plus sourcemap
 {
   "compilerOptions": {
-    // "outDir": "./build/",
-    "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es6",
+    "experimentalDecorators": true,
+    "target": "es5",
+    "downlevelIteration": true,
+    "module": "esnext",
     "jsx": "react",
-    "lib": ["es6", "dom", "es2015"],
-    "allowSyntheticDefaultImports": true
-  }
-  // "include": ["./src/**/*"]
+    "jsxFactory": "h",
+    "sourceMap": true,
+    // "strict": true,
+    "lib": ["dom", "dom.iterable", "esnext", "webworker"],
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "types": []
+  },
+  "exclude": ["src/sw/**/*"]
 }
