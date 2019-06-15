@@ -79,3 +79,18 @@ function quickSort(items, leftIndex = 0, rightIndex = items.length - 1) {
 }
 
 // console.log(quickSort([2, 1, 3, 5, 0]));
+
+function quick(arr, left = 0, right = arr.length - 1) {
+  if (arr.length <= 1) return arr;
+
+  const pivotIndex = partition(arr, left, right);
+
+  if (pivotIndex - 1 > left) {
+    quick(arr, left, pivotIndex - 1);
+  }
+  if (pivotIndex < right) {
+    quick(arr, pivotIndex, right);
+  }
+
+  return arr;
+}
