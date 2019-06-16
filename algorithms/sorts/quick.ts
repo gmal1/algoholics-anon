@@ -80,17 +80,17 @@ function quickSort(items, leftIndex = 0, rightIndex = items.length - 1) {
 
 // console.log(quickSort([2, 1, 3, 5, 0]));
 
-function quick(arr, left = 0, right = arr.length - 1) {
-  if (arr.length <= 1) return arr;
-
-  const pivotIndex = partition(arr, left, right);
-
-  if (pivotIndex - 1 > left) {
-    quick(arr, left, pivotIndex - 1);
+function partition(arr, lo, hi) {
+  const pivot = arr[hi];
+  let i = lo - 1;
+  for (let j = lo; j < hi; j++) {
+    if (arr[j] < pivot) {
+      i++;
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
   }
-  if (pivotIndex < right) {
-    quick(arr, pivotIndex, right);
+  if (arr[hi] < arr[i + 1]) {
+    [arr[i + 1], arr[hi]] = [arr[hi], arr[i + 1]];
   }
-
-  return arr;
+  return i + 1;
 }
