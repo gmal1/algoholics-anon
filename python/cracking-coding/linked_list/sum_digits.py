@@ -4,7 +4,7 @@ def sum_digits(l1, l2):
     output = None
     outputPtr = None
 
-    while(l1 or l2):
+    while l1 or l2:
         sum = l1.val if l1 else 0
         sum += l2.val if l2 else 0
         sum += carry
@@ -22,17 +22,20 @@ def sum_digits(l1, l2):
             outputPtr.next = Node(sum)
             outputPtr = outputPtr.next
 
-        if l1: l1 = l1.next
-        if l2: l2 = l2.next
-    
+        if l1:
+            l1 = l1.next
+        if l2:
+            l2 = l2.next
+
     return output
-        
+
 
 class Node:
     def __init__(self, val):
         self.val = val
         self.next = None
 
+<<<<<<< HEAD:python/cracking-coding/linked_list/sum_digits.py
 # l1 = Node(7)
 # l1.next = Node(1)
 # l1.next.next = Node(6)
@@ -43,16 +46,26 @@ class Node:
 # l2.next.next.next = Node()
 
 l1 = Node(6)
+=======
+
+l1 = Node(7)
+>>>>>>> ab3d11fb9342f7efaa01222476449ed534b8fb3b:python/cracking-coding/chap_2/sum_digits.py
 l1.next = Node(1)
 l1.next.next = Node(7)
 
 l2 = Node(2)
 l2.next = Node(9)
+<<<<<<< HEAD:python/cracking-coding/linked_list/sum_digits.py
 l2.next.next = Node(5)
+=======
+l2.next.next = Node(2)
+l2.next.next.next = Node(3)
+>>>>>>> ab3d11fb9342f7efaa01222476449ed534b8fb3b:python/cracking-coding/chap_2/sum_digits.py
 
 output = sum_digits(l1, l2)
 current = output
 while current:
-    print(current.val, end='')
+    print(current.val, end="")
     current = current.next
-print('')
+print("")
+

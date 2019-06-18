@@ -1,4 +1,6 @@
 import math
+
+
 def del_node(node):
     if not node:
         return
@@ -14,12 +16,12 @@ class Node:
         self.next = None
 
 
-head = Node('a')
-head.next = Node('b')
-head.next.next = Node('c')
-head.next.next.next = Node('d')
-head.next.next.next.next = Node('e')
-head.next.next.next.next.next = Node('f')
+head = Node("a")
+head.next = Node("b")
+head.next.next = Node("c")
+head.next.next.next = Node("d")
+head.next.next.next.next = Node("e")
+head.next.next.next.next.next = Node("f")
 
 del_node(head.next.next)
 

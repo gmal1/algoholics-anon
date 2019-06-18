@@ -1,5 +1,5 @@
 def str_compression(input):
-    output = ''
+    output = ""
     count = 0
 
     for i in range(len(input) - 1):
@@ -8,13 +8,15 @@ def str_compression(input):
 
         if char == nxt_char:
             count += 1
-        
+
         if not char == nxt_char or i + 2 == len(input):
-            output += char + str (count + 1)
+            output += char + str(count + 1)
             count = 0
 
-    return input if len(output) > len(input) else output 
+    return input if len(output) > len(input) else output
 
-print(str_compression('aabccccccqq'))
-print(str_compression('abcdef'))
-print(str_compression('abcdefaavccc'))
+
+print(str_compression("aabccccccqq"))
+print(str_compression("abcdef"))
+print(str_compression("abcdefaavccc"))
+
