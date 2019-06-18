@@ -36,7 +36,7 @@ function quickSelect(arr, k) {
  * Returns the kth largest element in an unsorted array.
  * @param {number[]} arr The input array.
  * @param {number} k
- * @param {number} The kth largest element in the array.
+ * @return {number} The kth largest element in the array.
  */
 function quickSelectLargest(arr, k) {
   return quickSelect(arr, arr.length - k + 1);
