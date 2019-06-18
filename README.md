@@ -21,3 +21,7 @@
 * [apple stocks](../master/interview-questions/maxProfitCalc.js)
 * [find shortest route in directed graph](../master/interview-questions/findRoute.js)
 * [construct a BST of minimal height](../master/interview-questions/minHeightBST.js)
+* [wrap text (Kotlin)](../master/interview-questions/wrapText.kt)
+* [reverse linked list](../master/interview-questions/reverseLinkedList.js)
+* [find route in a directed graph](../master/interview-questions/findRoute.js)
+* [balanced BST](../master/interview-questions/balancedBST.js)
