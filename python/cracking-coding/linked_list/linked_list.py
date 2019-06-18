@@ -59,6 +59,9 @@ class LinkedList:
         current.next = current.next.next
         self.length -= 1
 
+    def insert_at(self, position, val):
+        pass
+
     def remove_at(self, position):
         if position < 0 or position > self.length:
             return
