@@ -1,31 +1,30 @@
-function merge(arr1, arr2) {
+function merge(left, right) {
   const merged = [];
+  let leftIndex = 0;
+  let rightIndex = 0;
 
-  while (arr1.length > 0 && arr2.length > 0) {
-    if (arr1[0] < arr2[0]) {
-      merged.push(arr1.shift());
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      merged.push(left[leftIndex]);
+      leftIndex += 1; // advance left index
     } else {
-      merged.push(arr2.shift());
+      merged.push(right[rightIndex]);
+      rightIndex += 1; // advance right index
     }
   }
 
-  while (arr1.length > 0) {
-    merged.push(arr1.shift());
-  }
-
-  while (arr2.length > 0) {
-    merged.push(arr2.shift());
-  }
-  return merged;
+  return merged.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
 
 function mergeSort(array) {
-  if (array.length === 1) return array;
+  if (array.length <= 1) {
+    return array;
+  }
+  const middle = Math.floor(array.length / 2);
+  const left = array.slice(0, middle);
+  const right = array.slice(middle);
 
-  const start = 0;
-  const middle = Math.abs(array.length / 2);
-  const left = mergeSort(array.slice(start, middle));
-  const right = mergeSort(array.slice(middle));
-
-  return merge(left, right);
+  return merge(mergeSort(left), mergeSort(right));
 }
+
+module.exports = mergeSort;

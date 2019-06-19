@@ -61,3 +61,5 @@ class BinarySearchTree {
     return min;
   }
 }
+
+module.exports = BinarySearchTree;

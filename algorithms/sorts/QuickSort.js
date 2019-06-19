@@ -44,3 +44,5 @@ function quickSort(items, left, right) {
   }
   return items;
 }
+
+module.exports = quickSort;

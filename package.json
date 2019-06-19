@@ -4,7 +4,14 @@
   "description": "algos yo",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "test:coverage": "npm test -- --coverage",
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,6 +28,7 @@
     "@types/node": "^12.0.4"
   },
   "devDependencies": {
+    "husky": "^2.4.1",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.1"
