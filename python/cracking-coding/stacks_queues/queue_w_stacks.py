@@ -1,25 +1,11 @@
-class Stack:
-    def __init__(self):
-        self.stack = []
-
-    def push(self, value: int):
-        self.stack.append(value)
-
-    def pop(self):
-        if len(self.stack) == 0:
-            raise Exception('Stack empty')
-
-        return self.stack.pop()
-
-    def is_empty(self):
-        return len(self.stack) == 0
+from stack import Stack
 
 class MyQueue:
     def __init__(self):
         self.stack1 = Stack()
         self.stack2 = Stack()
 
-    def enqueue(self, value):
+    def enqueue(self, value: int):
         self.stack2.push(value)
 
     def deque(self):
