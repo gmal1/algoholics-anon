@@ -78,17 +78,17 @@ class Node:
         self.value = value
         self.next = None
 
-ll = LinkedList()
-ll.append(4)
-ll.append(5)
-ll.append(6)
-ll.append(7)
-ll.append(8)
+# ll = LinkedList()
+# ll.append(4)
+# ll.append(5)
+# ll.append(6)
+# ll.append(7)
+# ll.append(8)
 
-ll.remove(8)
+# ll.remove(8)
 # print(ll.contains(6))
-print(ll.contains(8))
-print(ll.back())
+# print(ll.contains(8))
+# print(ll.back())
 # print(ll.front())
 # print(ll.back())
 # print(ll.prepend(1))
