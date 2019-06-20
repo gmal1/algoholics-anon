@@ -5,14 +5,14 @@
  * (or false if no such pair exists)
  * */
 function twoSum(arr, target) {
-    var complements = new Map([]);
-    for (var i = 0; i < arr.length; i++) {
-        var cand = arr[i];
-        var compl = target - cand;
-        if (complements.has(compl)) {
-            return [complements.get(compl), i];
-        }
-        complements.set(cand, i);
+  const complements = new Map([]);
+  for (let i = 0; i < arr.length; i++) {
+    const cand = arr[i];
+    const compl = target - cand;
+    if (complements.has(compl)) {
+      return [complements.get(compl), i];
     }
-    return false;
+    complements.set(cand, i);
+  }
+  return false;
 }
