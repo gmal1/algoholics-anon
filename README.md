@@ -16,6 +16,7 @@
 * [randomized queue](../master/data-structures/RandomizedQueue.ts)
 * [deque](../master/data-structures/Deque.ts)
 * [graph](../master/data-structures/Graph.js)
+* [LRU cache](../master/data-structures/LRUcache.js)
 
 ## Interview questions
 * [apple stocks](../master/interview-questions/maxProfitCalc.js)
