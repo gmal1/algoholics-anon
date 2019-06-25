@@ -34,4 +34,5 @@
 * [longest substring; no repeat (JS)](../master/interview-questions/longestSubstringNoRepeat.js)
 * [longest substring; no repeat (TS)](../master/interview-questions/longestSubstringNoRepeat.ts)
 * [unbounded knapsack](../master/interview-questions/unboundedKnapsack.js)
+* [synchronize](../master/interview-questions/synchronize.js)
 * [shortest path](../master/interview-questions/shortestPath.js)
