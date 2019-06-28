@@ -22,20 +22,22 @@ if the word isn't banned, incrememnt its map value
 if incrementing the value puts it past the maxNum, it becomes the maxWord
  */
 function mostCommonWord(para, banned) {
-    // assemble banned map
-    var bannedMap = new Map();
-    banned.forEach(function (el) { return bannedMap.set(el.toLowerCase(), 1); });
-    var maxWord;
-    var paraMap = new Map();
-    var paraArr = para.toLowerCase().split(/\W+/);
-    for (var _i = 0, paraArr_1 = paraArr; _i < paraArr_1.length; _i++) {
-        var word = paraArr_1[_i];
-        if (!bannedMap.has(word)) {
-            paraMap.set(word, paraMap.get(word) ? paraMap.get(word) + 1 : 1);
-            if (paraMap.get(word) > maxWord.length) {
-                maxWord = word;
-            }
-        }
+  // assemble banned map
+  const bannedMap = new Map();
+  banned.forEach(function(el) {
+    return bannedMap.set(el.toLowerCase(), 1);
+  });
+  let maxWord;
+  const paraMap = new Map();
+  const paraArr = para.toLowerCase().split(/\W+/);
+  for (let _i = 0, paraArr_1 = paraArr; _i < paraArr_1.length; _i += 1) {
+    const word = paraArr_1[_i];
+    if (!bannedMap.has(word)) {
+      paraMap.set(word, paraMap.get(word) ? paraMap.get(word) + 1 : 1);
+      if (paraMap.get(word) > maxWord.length) {
+        maxWord = word;
+      }
     }
-    return maxWord;
+  }
+  return maxWord;
 }

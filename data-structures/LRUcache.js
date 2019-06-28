@@ -105,7 +105,7 @@ const test = new LRU(3);
 
 const str = 'dcccdbaeabc';
 let i = 0;
-for (let el of str) {
+for (const el of str) {
   test.addElement(el, i);
-  i++;
+  i += 1;
 }
