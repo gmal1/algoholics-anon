@@ -1,16 +1,13 @@
-const assert = require('assert');
-
-it('should return true', () => {
-  assert.equal(true, true);
-});
-
-function binSearchIterative(arr: number[], target: number): boolean {
+function binSearchIterative(arr, target) {
   // assuming sorted array of numbers
   let left = 0;
   let right = arr.length - 1;
-  let mid = Math.floor(arr.length / 2);
-  while (left < right) {
-    if (arr[mid] === target) return true;
+  while (left <= right) {
+    let mid = Math.floor(left + right / 2);
+    if (arr[mid] === target) return mid;
+    if (left === right) {
+      return false;
+    }
     if (arr[mid] > target) {
       right = mid - 1;
       continue;
@@ -20,6 +17,31 @@ function binSearchIterative(arr: number[], target: number): boolean {
       continue;
     }
   }
+  return false;
 }
+
+function binarySearchRec(arr, target, i = 0, j = arr.length - 1) {
+  // assuming arr is sorted
+  if (j < i) return false;
+  const mid = Math.floor((i + j) / 2);
+  if (arr[mid] === target) return mid;
+
+  if (target < mid) {
+    return binarySearchRec(arr, target, i, mid - 1);
+  } else {
+    return binarySearchRec(arr, target, mid + 1, j);
+  }
+}
+
+console.log(binarySearchRec([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 3)); // 3
+console.log(binarySearchRec([0, 1, 2, 4, 5, 6, 7, 8, 9], 3)); // false
+console.log(binarySearchRec([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 30)); // false
+console.log(binarySearchRec([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 0)); // 0
+console.log(binarySearchRec([0, 1, 2, 3, 4, 5, 6, 7, 8], 1)); // 1
+console.log(binarySearchRec([0, 1], 1)); // 1
+console.log(binarySearchRec([0, 1], 0)); // 0
+console.log(binarySearchRec([0], 0)); // 0
+console.log(binarySearchRec([0], 1)); // false
+console.log(binarySearchRec([], 1)); // false
 
 // not tested yet
