@@ -11,8 +11,7 @@ class MaxHeap {
 
   delMax(): number {
     const max = this.arr[1];
-    this.arr[1] = this.arr[this.arr.length - 1];
-    this.arr.pop();
+    this.arr[1] = this.arr.pop();
     this.sink(1);
     return max;
   }
@@ -26,7 +25,7 @@ class MaxHeap {
       if (child1 > cand) {
         swapIdx = idx * 2;
       }
-      if (child2 > child1) {
+      if (child2 > child1 && swapIdx !== null) {
         swapIdx++;
       }
       if (!swapIdx) break;
@@ -54,76 +53,57 @@ class MaxHeap {
 
 module.exports = MaxHeap;
 
-
-
-
-
-
-
-
-
-
-class MinHeap{
-  arr: number[]
-  constructor(){
+class MinHeap<T> {
+  arr: T[];
+  constructor() {
     this.arr = [null];
   }
 
-  push(val: number){
+  push(val: T): void {
     this.arr.push(val);
     this.swim(this.arr.length - 1);
   }
 
-  delMin(){
-    const result = this.arr[1];
-    const end = this.arr[this.arr.length - 1];
-
-    this.arr[1] = end;
-    this.arr.pop();
-    this.sink(1);
-
-    return result;
-  }
-
-  swim(idx: number){
-    const candidate = this.arr[idx];
-    while (idx > 1){
-      const parentIdx = Math.floor(idx / 2);
-      const parent = this.arr[parentIdx];
-
-      if (parent < candidate) break;
-
-      this.arr[parentIdx] = candidate;
-      this.arr[idx] = parent;
-      idx = parentIdx;
-    }
-  }
-
-  sink(idx: number){
-    const candidate = this.arr[idx];
-
-    while (true){
-      const child1 = this.arr[idx * 2]; 
-      const child2 = this.arr[idx * 2 + 1];
-      
-      let swapIdx;
-      if (child1 < candidate){
-        swapIdx = idx * 2;
+  sink(idx: number): void {
+    const candVal = this.arr[idx];
+    while (this.arr[idx] !== undefined) {
+      const child1Idx = Math.floor(idx * 2);
+      const child2Idx = child1Idx + 1;
+      let swapIdx = null;
+      if (candVal > this.arr[child1Idx]) {
+        swapIdx = child1Idx;
       }
-      if (child2 < child1){
+      if (this.arr[child2Idx] > this.arr[child1Idx] && swapIdx !== null) {
         swapIdx++;
       }
 
-      if (!swapIdx) break;
+      if (swapIdx === null) break;
 
       this.arr[idx] = this.arr[swapIdx];
-      this.arr[swapIdx] = candidate;
+      this.arr[swapIdx] = candVal;
       idx = swapIdx;
     }
-
   }
 
+  swim(idx: number): void {
+    const candVal = this.arr[idx];
+    while (idx > 1) {
+      const parentIdx = Math.floor(idx / 2);
+      const parentVal = this.arr[parentIdx];
+      if (parentVal < candVal) {
+        this.arr[parentIdx] = candVal;
+        this.arr[idx] = parentVal;
+        idx = parentIdx;
+      } else {
+        break;
+      }
+    }
+  }
 
+  removeMin(): T {
+    const min = this.arr[1];
+    this.arr[1] = this.arr.pop();
+    this.sink(1);
+    return min;
+  }
 }
-
-

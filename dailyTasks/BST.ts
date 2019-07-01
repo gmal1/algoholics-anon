@@ -3,68 +3,57 @@ class BST {
   val: number;
   left: BST;
   right: BST;
-  constructor(val: number) {
+
+  constructor(val) {
     this.val = val;
     this.left = null;
     this.right = null;
   }
 
-  add(val: number): void {
+  add(val: number): BST {
+    const newNode = new BST(val);
     let parent: BST = this;
     while (true) {
-      if (val < parent.val) {
-        if (!parent.left) {
-          parent.left = new BST(val);
-          break;
-        } else {
-          parent = parent.left;
-        }
-      } else if (val > parent.val) {
-        if (!parent.right) {
-          parent.right = new BST(val);
-          break;
-        } else {
-          parent = parent.right;
-        }
+      if (val > parent.val) {
+        if (!parent.right) return (parent.right = newNode);
+        parent = parent.right;
+      } else if (val < parent.val) {
+        if (!parent.left) return (parent.left = newNode);
+        parent = parent.left;
+      } else {
+        throw new Error('no duplicate vals allowed');
       }
     }
   }
 
   contains(val: number): boolean {
     let parent: BST = this;
-    while (true) {
+    while (parent) {
       if (val === parent.val) return true;
 
-      if (val < parent.val) {
-        if (!parent.left) {
-          return false;
-        } else {
-          parent = parent.left;
-        }
-      } else if (val > parent.val) {
-        if (!parent.right) {
-          return false;
-        } else {
-          parent = parent.right;
-        }
+      if (val > parent.val) {
+        parent = parent.right;
+      } else if (val < parent.val) {
+        parent = parent.left;
       }
     }
-  }
-
-  max(): number {
-    let parent: BST = this;
-    while (true) {
-      if (!parent.right) return parent.val;
-      parent = parent.right;
-    }
+    return false;
   }
 
   min(): number {
     let parent: BST = this;
-    while (true) {
-      if (!parent.left) return parent.val;
+    while (parent.left) {
       parent = parent.left;
     }
+    return parent.val;
+  }
+
+  max(): number {
+    let parent: BST = this;
+    while (parent.right) {
+      parent = parent.right;
+    }
+    return parent.val;
   }
 }
 
