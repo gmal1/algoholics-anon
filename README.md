@@ -22,7 +22,7 @@
 ## Interview questions
 * [apple stocks](../master/interview-questions/maxProfitCalc.js)
 * [balanced BST](../master/interview-questions/balancedBST.js)
-* [bikes](../master/interview-questions/bikes.js))
+* [bikes](../master/interview-questions/bikes.js)
 * [construct a BST of minimal height](../master/interview-questions/minHeightBST.js)
 * [find shortest route in directed graph](../master/interview-questions/findRoute.js)
 * [longest substring; no repeat (JS)](../master/interview-questions/longestSubstringNoRepeat.js)
@@ -30,7 +30,7 @@
 * [longest substring with at most k distinct characters](../master/interview-questions/longestSubstringKDistinct.js)
 * [most common word (JS)](../master/interview-questions/mostCommonWord.js)
 * [most common word (TS)](../master/interview-questions/mostCommonWord.ts)
-* [push to end]((../master/interview-questions/pushToEnd.js))
+* [push to end](../master/interview-questions/pushToEnd.js)
 * [reverse linked list](../master/interview-questions/reverseLinkedList.js)
 * [synchronize](../master/interview-questions/synchronize.js)
 * [shortest path](../master/interview-questions/shortestPath.js)
