@@ -1,4 +1,4 @@
-// to be used for optimal soltion to leetcode 340
+// to be used for optimal solution to leetcode 340
 // https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
 
 class LRU {

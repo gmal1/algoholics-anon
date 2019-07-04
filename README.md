@@ -21,15 +21,17 @@
 * binary search tree ([JavaScript](../master/data-structures/BST.js))
 * deque ([JavaScript](../master/data-structures/Deque.js)/[TypeScript](../master/data-structures/Deque.ts))
 * doubly linked list ([JavaScript](../master/data-structures/DoublyLinkedList.js))
-* graph ([JavaScript](../master/data-structures/Graph.js)/[TypeScript](../master/data-structures/Graph.ts))
+* graph ([JavaScript](../master/data-structures/Graph.js)/[TypeScript](../master/data-structures/Graph.ts))
 * hash table ([JavaScript](../master/data-structures/HashTable.js))
 * linked list ([JavaScript](../master/data-structures/LinkedList.js)/[Python](../master/python/data-structures/linked_list.py))
 * LRU cache ([JavaScript](../master/data-structures/LRUcache.js))
-* max heap ([TypeScript](../master/dailyTasks/maxHeap.ts))
-* min heap ([TypeScript](../master/data-structures/minHeap.ts))
+* max heap ([JavaScript](../master/data-structures/MaxHeap.js)/[TypeScript](../master/data-structures/MaxHeap.ts))
+* min heap ([TypeScript](../master/data-structures/MinHeap.ts))
 * randomized queue ([TypeScript](../master/data-structures/RandomizedQueue.ts))
 * red-black tree ([Python](../master/python/data-structures/ll_red_black.py))
+* stack ([Python](../master/python/cracking-coding/stacks_queues/stack.py))
 
+/Users/mal/Desktop/CS/algoholics-anon/python/data-structures/ll_red_black.py
 ## Interview questions
 * [apple stocks](../master/interview-questions/maxProfitCalc.js)
 * [balanced BST](../master/interview-questions/balancedBST.js)
