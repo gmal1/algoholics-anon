@@ -1,4 +1,4 @@
-const MaxHeap = require('../dailyTasks/MaxHeap.js');
+const MaxHeap = require('../data-structures/MaxHeap.js');
 
 describe('max heap tests', () => {
   const arr2 = [1, 4, 5, 6, 2, 10, 3, 17, 0, 10];

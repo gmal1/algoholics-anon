@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  * given a string:
- * return the size of the longest substring that doesnt have repeat chars
+ * return the size of the longest substring that doesn't have repeat chars
  */
 
 /*

@@ -1,5 +1,5 @@
 const util = require('util'); // node core module used for console logs of deeply nested objects
-const BST = require('../dailyTasks/BST.js');
+const BST = require('../data-structures/BST_CP.js');
 
 describe('BST tests', () => {
   // REPEATS NOT ALLOWED IN THESE BSTs

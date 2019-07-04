@@ -7,7 +7,7 @@ function perms(...sArr) {
 
   function helper(str, acc) {
     if (str.length === 0) return output.add(acc);
-    for (let i = 0; i < str.length; i++) {
+    for (let i = 0; i < str.length; i += 1) {
       const char = str[i];
       acc += char;
       helper(str.slice(0, i) + str.slice(i + 1), acc);
@@ -15,7 +15,7 @@ function perms(...sArr) {
     }
   }
 
-  for (let s of sArr) {
+  for (const s of sArr) {
     helper(s, '');
   }
   return [...output];
