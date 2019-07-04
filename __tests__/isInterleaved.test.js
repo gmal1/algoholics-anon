@@ -13,7 +13,7 @@ describe('isInterleaved tests', () => {
   });
 
   it('returns false for three empty strings', () => {
-    expect(isInterleaved('', '', '')).toEqual(false);
+    expect(isInterleaved('', '', '')).toEqual(true);
   });
 
   it('returns false if the third string is longer than the sum of first two', () => {
