@@ -36,7 +36,7 @@
 * apple stocks ([JavaScript](../master/interview-questions/maxProfitCalc.js))
 * balanced BST ([JavaScript](../master/interview-questions/balancedBST.js))
 * bikes ([JavaScript](../master/interview-questions/bikes.js))
-* check if given string is interleaving of two other strings ([JavaScript](../master/interview-questions/isInterleaved.js))
+* check if given string is interleaving of two strings ([JavaScript](../master/interview-questions/isInterleaved.js))
 * check permutation ([Python](../master/python/cracking-coding/array_strings/is_perm.py))
 * construct a BST of minimal height ([JavaScript](../master/interview-questions/minHeightBST.js))
 * delete linked list node ([Python](../master/python/cracking-coding/linked_list/del_node.py))
