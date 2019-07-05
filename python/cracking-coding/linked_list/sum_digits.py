@@ -35,32 +35,15 @@ class Node:
         self.val = val
         self.next = None
 
-<<<<<<< HEAD:python/cracking-coding/linked_list/sum_digits.py
-# l1 = Node(7)
-# l1.next = Node(1)
-# l1.next.next = Node(6)
-
-# l2 = Node(5)
-# l2.next = Node(9)
-# l2.next.next = Node(2)
-# l2.next.next.next = Node()
-
-l1 = Node(6)
-=======
 
 l1 = Node(7)
->>>>>>> ab3d11fb9342f7efaa01222476449ed534b8fb3b:python/cracking-coding/chap_2/sum_digits.py
 l1.next = Node(1)
 l1.next.next = Node(7)
 
 l2 = Node(2)
 l2.next = Node(9)
-<<<<<<< HEAD:python/cracking-coding/linked_list/sum_digits.py
-l2.next.next = Node(5)
-=======
 l2.next.next = Node(2)
 l2.next.next.next = Node(3)
->>>>>>> ab3d11fb9342f7efaa01222476449ed534b8fb3b:python/cracking-coding/chap_2/sum_digits.py
 
 output = sum_digits(l1, l2)
 current = output

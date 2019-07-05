@@ -43,19 +43,19 @@ but how can we know how far to contract the left side of the window?
 
 */
 
-var lengthOfLongestSubstringKDistinct = function(s, k) {
+const lengthOfLongestSubstringKDistinct = function(s, k) {
   if (k === 0) return 0;
   // now for the more optimal approach, implementing an LRU cache
   const windowChars = new LRU(k);
-  const cache = windowChars.cache;
-  const map = windowChars.map;
+  const { cache } = windowChars;
+  const { map } = windowChars;
 
   let max = 0;
   let left = 0;
 
   // expand window if the cache is not full
   // otherwise, contract the window to 1+ the least recently used char's rightmost idx
-  for (let right = 0; right < s.length; right++) {
+  for (let right = 0; right < s.length; right += 1) {
     const char = s[right];
     const evictedNode = windowChars.addElement(char, right);
     if (evictedNode) {
@@ -145,8 +145,8 @@ class DblLinkedList {
 
   // remove the node from the LL
   remove(node) {
-    const prev = node.prev;
-    const next = node.next;
+    const { prev } = node;
+    const { next } = node;
     prev.next = next;
     next.prev = prev;
     return node;

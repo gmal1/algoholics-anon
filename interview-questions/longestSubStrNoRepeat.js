@@ -1,7 +1,7 @@
 /**
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  * given a string:
- * return the size of the longest substring that doesnt have repeat chars
+ * return the size of the longest substring that doesn't have repeat chars
  */
 /**
  * important ideas:
@@ -15,15 +15,15 @@
  * -when condition is broken (repeat character) contract window as far right as is needed
  */
 function longest(str) {
-    var max = 0;
-    var map = new Map();
-    var left = 0;
-    for (var right = 0; right < str.length; right++) {
-        var cand = str[right];
-        var previousIdx = map.get(cand);
-        left = previousIdx >= left ? previousIdx + 1 : left;
-        max = Math.max(max, right - left + 1);
-        map.set(cand, right);
-    }
-    return max;
+  let max = 0;
+  const map = new Map();
+  let left = 0;
+  for (let right = 0; right < str.length; right += 1) {
+    const cand = str[right];
+    const previousIdx = map.get(cand);
+    left = previousIdx >= left ? previousIdx + 1 : left;
+    max = Math.max(max, right - left + 1);
+    map.set(cand, right);
+  }
+  return max;
 }
