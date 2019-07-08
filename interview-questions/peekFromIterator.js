@@ -17,11 +17,7 @@ class Iterator {
   }
 
   hasNext() {
-    if (this.iterable[this.index + 1] !== undefined) {
-      return true;
-    } else {
-      return false;
-    }
+    return this.iterable[this.index + 1] !== undefined;
   }
 }
 
