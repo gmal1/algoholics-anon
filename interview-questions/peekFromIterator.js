@@ -46,7 +46,9 @@ class PeekableInterface extends Iterator {
   }
 
   next() {
-    return (this.current = super.next());
+    const prev = this.current;
+    this.current = super.next();
+    return prev;
   }
 
   peek() {
@@ -57,16 +59,10 @@ class PeekableInterface extends Iterator {
 {
   const peek1 = new PeekableInterface([1, 2, 3]);
   console.log(peek1);
-  console.log('peek', peek1.peek());
-  console.log('has', peek1.hasNext());
-  console.log('next', peek1.next());
-  console.log('peek again', peek1.peek());
-
-  console.log(peek1.hasNext());
-  console.log(peek1.next());
-  console.log(peek1.hasNext());
-  console.log(peek1.next());
-  console.log(peek1.hasNext());
-  console.log(peek1.next());
-  console.log(peek1.hasNext());
+  console.log(peek1.peek()); // 1
+  console.log(peek1.hasNext()); // true
+  console.log(peek1.next()); // 1
+  console.log(peek1.peek()); // 2
+  console.log(peek1.peek()); // 2
+  console.log(peek1.next()); // 2
 }
