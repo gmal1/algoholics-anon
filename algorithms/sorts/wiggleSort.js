@@ -15,4 +15,7 @@ function wiggleSort(nums) {
       [nums[i - 1], nums[i]] = [nums[i], nums[i - 1]];
     }
   }
+  return nums;
 }
+
+console.log(wiggleSort([1, 1, 1, 1, 2, 2, 2, 2]));
