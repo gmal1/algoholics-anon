@@ -16,6 +16,7 @@
 * radix sort ([TypeScript](../master/algorithms/sorts/RadixSort.ts))
 * selection sort ([JavaScript](../master/algorithms/sorts/SelectionSort.js) / [TypeScript](../master/algorithms/sorts/SelectionSort.ts))
 * shell sort ([JavaScript](../master/algorithms/sorts/ShellSort.js))
+* wiggle sort ([JavaScript](../master/algorithms/sorts/WiggleSort.js))
 
 ## Data structures
 * binary search tree ([JavaScript](../master/data-structures/BST.js))
