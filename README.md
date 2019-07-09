@@ -18,6 +18,11 @@
 * shell sort ([JavaScript](../master/algorithms/sorts/ShellSort.js))
 * wiggle sort ([JavaScript](../master/algorithms/sorts/WiggleSort.js))
 
+### Tree traversal:
+* in-order traversal ([JavaScript](../master/algorithms/treeTraversal/inorderTraversal.js))
+* post-order traversal ([JavaScript](../master/algorithms/treeTraversal/postorderTraversal.js))
+* pre-order traversal ([JavaScript](../master/algorithms/treeTraversal/preorderTraversal.js))
+
 ## Data structures
 * binary search tree ([JavaScript](../master/data-structures/BST.js))
 * deque ([JavaScript](../master/data-structures/Deque.js) / [TypeScript](../master/data-structures/Deque.ts))
@@ -43,6 +48,7 @@
 * delete linked list node ([Python](../master/python/cracking-coding/linked_list/del_node.py))
 * find shortest route in directed graph ([JavaScript](../master/interview-questions/findRoute.js))
 * generate all permutations ([JavaScript](../master/interview-questions/generateAllPerms.js))
+* generate valid parens pairs ([JavaScript](../master/interview-questions/generateParens.js))
 * is unique ([Python](../master/python/cracking-coding/array_strings/is_unique.py))
 * kth to last ([Python](../master/python/cracking-coding/linked_list/kth_to_last.py))
 * longest substring with at most k distinct characters ([JavaScript](../master/interview-questions/longestSubstringKDistinct.js))
@@ -53,6 +59,7 @@
 * one away ([Python](../master/python/cracking-coding/array_strings/one_away.py))
 * palindrome permutation ([Python](../master/python/cracking-coding/array_strings/palin_perm.py))
 * partition linked list ([Python](../master/python/cracking-coding/linked_list/partition.py))
+* peek from iterator ([JavaScript](../master/interview-questions/peekFromIterator.js))
 * push to end ([JavaScript](../master/interview-questions/pushToEnd.js))
 * queue via stacks ([Python](../master/python/cracking-coding/stacks_queues/queue_w_stacks.py))
 * reverse linked list ([JavaScript](../master/interview-questions/reverseLinkedList.js))
@@ -64,6 +71,7 @@
 * stack min ([Python](../master/python/cracking-coding/stacks_queues/stack_min.py))
 * string compression ([Python](../master/python/cracking-coding/array_strings/str_compression.py))
 * string rotation ([Python](../master/python/cracking-coding/array_strings/string_rotation.py))
+* subset sums ([JavaScript](../master/interview-questions/subsetSums.js))
 * sum lists ([Python](../master/python/cracking-coding/linked_list/sum_digits.py))
 * synchronize ([JavaScript](../master/interview-questions/synchronize.js))
 * three stacks with one array ([Python](../master/python/cracking-coding/stacks_queues/three_in_one.py))

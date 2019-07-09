@@ -6,7 +6,7 @@ function subsetSums(arr, k) {
   function helper(subset, sum, index) {
     if (sum > k) return;
     if (sum === k) return result.push([...subset]);
-    for (let i = index; i < arr.length; i++) {
+    for (let i = index; i < arr.length; i += 1) {
       const cand = arr[i];
       subset.push(cand);
       sum += cand;
