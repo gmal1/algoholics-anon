@@ -54,6 +54,7 @@
 * longest substring with at most k distinct characters ([JavaScript](../master/interview-questions/longestSubstringKDistinct.js))
 * longest substring with no repeating characters ([JavaScript](../master/interview-questions/longestSubStrNoRepeat.js) / [TypeScript](../master/interview-questions/longestSubStrNoRepeat.ts))
 * loop detection ([Python](../master/python/cracking-coding/linked_list/loop_detection.py))
+* match words to pattern ([JavaScript](../master/interview-questions/matchPattern.js))
 * most common word ([JavaScript](../master/interview-questions/mostCommonWord.js) / [TypeScript](../master/interview-questions/mostCommonWord.ts))
 * n paths / no backtracking ([JavaScript](../master/interview-questions/nPathsNoBacktracking.js))
 * one away ([Python](../master/python/cracking-coding/array_strings/one_away.py))
