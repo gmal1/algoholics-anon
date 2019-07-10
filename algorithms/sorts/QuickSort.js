@@ -80,11 +80,11 @@ function genRandArr(size = 1000) {
   return arr;
 }
 
-const bigArr1 = genRandArr(1000);
-const bigArr2 = genRandArr(10000);
-const bigArr3 = genRandArr(100000);
-const bigArr4 = genRandArr(1000000);
-const bigArr5 = genRandArr(10000000);
+// const bigArr1 = genRandArr(1000);
+// const bigArr2 = genRandArr(10000);
+// const bigArr3 = genRandArr(100000);
+// const bigArr4 = genRandArr(1000000);
+// const bigArr5 = genRandArr(10000000);
 
 // console.time();
 // quicksort(bigArr1.slice());
