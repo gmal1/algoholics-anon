@@ -90,7 +90,7 @@ console.time();
 // quicksort(bigArr1.slice());
 // quicksort(bigArr2.slice())
 // quicksort(bigArr3.slice());
-quicksort(bigArr4.slice());
+// quicksort(bigArr4.slice());
 // quicksort(bigArr5.slice());
 console.timeEnd();
 
@@ -98,8 +98,8 @@ console.time();
 // quicksortDec(bigArr1.slice());
 // quicksortDec(bigArr2.slice())
 // quicksortDec(bigArr3.slice());
-quicksortDec(bigArr4.slice());
+// quicksortDec(bigArr4.slice());
 // quicksortDec(bigArr5.slice());
 console.timeEnd();
 
-module.exports = quickSort;
+module.exports = quicksort;
