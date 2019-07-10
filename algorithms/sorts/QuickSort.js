@@ -86,20 +86,20 @@ const bigArr3 = genRandArr(100000);
 const bigArr4 = genRandArr(1000000);
 const bigArr5 = genRandArr(10000000);
 
-console.time();
+// console.time();
 // quicksort(bigArr1.slice());
 // quicksort(bigArr2.slice())
 // quicksort(bigArr3.slice());
 // quicksort(bigArr4.slice());
 // quicksort(bigArr5.slice());
-console.timeEnd();
+// console.timeEnd();
 
-console.time();
+// console.time();
 // quicksortDec(bigArr1.slice());
 // quicksortDec(bigArr2.slice())
 // quicksortDec(bigArr3.slice());
 // quicksortDec(bigArr4.slice());
 // quicksortDec(bigArr5.slice());
-console.timeEnd();
+// console.timeEnd();
 
 module.exports = quicksort;
