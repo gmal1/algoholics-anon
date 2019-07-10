@@ -23,7 +23,7 @@ so:
   -initialize a countArr of length equal to the range of incoming numbers
   -count the number of instances of each number in the range, incrementing the countArr as you go
   -propagate the values in the countArr forward to find out how many elements should already be in the array before each block (important detail: take into account that there are 0 elements before the first block)
-  -iterate thrut the input array and put each element into its respective block
+  -iterate thru the input array and put each element into its respective block
   (one final detail: when you put an element into its block, increment the count at that index so that the next copy, if there is one, knows to be put in the next index)
 
   time: O(n+k) where n is the # of elements, k is the range of elements
