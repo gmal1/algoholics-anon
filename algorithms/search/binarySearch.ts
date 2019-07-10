@@ -45,3 +45,29 @@ console.log(binarySearchRec([0], 1)); // false
 console.log(binarySearchRec([], 1)); // false
 
 // not tested yet
+console.log(binIter([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 3)); // 3
+console.log(binIter([0, 1, 2, 4, 5, 6, 7, 8, 9], 3)); // false
+console.log(binIter([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 30)); // false
+console.log(binIter([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 0)); // 0
+console.log(binIter([0, 1, 2, 3, 4, 5, 6, 7, 8], 1)); // 1
+console.log(binIter([0, 1], 1)); // 1
+console.log(binIter([0, 1], 0)); // 0
+console.log(binIter([0], 0)); // 0
+console.log(binIter([0], 1)); // false
+console.log(binIter([], 1)); // false
+
+function binIter(arr, target) {
+  let low = 0;
+  let high = arr.length - 1;
+  while (low <= high) {
+    let mid = low + Math.floor((high - low) / 2);
+    let cand = arr[mid];
+    if (cand === target) return mid;
+    if (target > cand) {
+      low = mid + 1;
+    } else {
+      high = mid - 1;
+    }
+  }
+  return false;
+}
