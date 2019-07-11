@@ -31,32 +31,36 @@ so:
   stable (very important fact for allowing Radix sort to work)
 */
 function countingSort(arr, max, min) {
-    if (max === void 0) { max = Math.max.apply(Math, arr); }
-    if (min === void 0) { min = Math.min.apply(Math, arr); }
-    var output = new Array(arr.length).fill(0);
-    var range = max - min + 1;
-    var countArr = new Array(range).fill(0);
-    // assemble countArr
-    for (var _i = 0, arr_1 = arr; _i < arr_1.length; _i++) {
-        var num = arr_1[_i];
-        countArr[num]++;
-    }
-    // propagate counts forward (making sure that the first entry is zero)
-    var propCount = 0;
-    countArr.forEach(function (count, i) {
-        countArr[i] = propCount;
-        propCount += count;
-    });
-    // console.log(countArr);
-    // notice that the # of copies of the largest element in the range is lost,
-    // we don't need that info because there will be no blocks after it that
-    // need to know where to start
-    // iterate thru the input array, putting each element into its block
-    arr.forEach(function (num) {
-        var idx = countArr[num];
-        output[idx] = num;
-        countArr[num] = idx + 1;
-        // console.log(output);
-    });
-    return output;
+  if (max === void 0) {
+    max = Math.max.apply(Math, arr);
+  }
+  if (min === void 0) {
+    min = Math.min.apply(Math, arr);
+  }
+  const output = new Array(arr.length).fill(0);
+  const range = max - min + 1;
+  const countArr = new Array(range).fill(0);
+  // assemble countArr
+  for (let _i = 0, arr_1 = arr; _i < arr_1.length; _i += 1) {
+    const num = arr_1[_i];
+    countArr[num] += 1;
+  }
+  // propagate counts forward (making sure that the first entry is zero)
+  let propCount = 0;
+  countArr.forEach(function(count, i) {
+    countArr[i] = propCount;
+    propCount += count;
+  });
+  // console.log(countArr);
+  // notice that the # of copies of the largest element in the range is lost,
+  // we don't need that info because there will be no blocks after it that
+  // need to know where to start
+  // iterate thru the input array, putting each element into its block
+  arr.forEach(function(num) {
+    const idx = countArr[num];
+    output[idx] = num;
+    countArr[num] = idx + 1;
+    // console.log(output);
+  });
+  return output;
 }

@@ -4,7 +4,7 @@
 
 function balancedParens(str) {
   const stack = [];
-  for (let char of str) {
+  for (const char of str) {
     if (char === '(') {
       stack.push('(');
     } else if (char === ')') {
@@ -12,7 +12,7 @@ function balancedParens(str) {
       if (top !== '(') return false;
     }
   }
-  return stack.length === 0 ? true : false;
+  return stack.length === 0;
 }
 
 console.log(balancedParens('')); // true
