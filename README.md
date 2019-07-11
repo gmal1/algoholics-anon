@@ -33,7 +33,7 @@
 * linked list ([JavaScript](../master/data-structures/LinkedList.js) / [Python](../master/python/data-structures/linked_list.py))
 * LRU cache ([JavaScript](../master/data-structures/LRUcache.js))
 * max heap ([JavaScript](../master/data-structures/MaxHeap.js) / [TypeScript](../master/data-structures/MaxHeap.ts) / [Python](../master/python/data-structures/heaps.py))
-* min heap ([TypeScript](../master/data-structures/MinHeap.ts) / / [Python](../master/python/data-structures/heaps.py))
+* min heap ([TypeScript](../master/data-structures/MinHeap.ts) / [Python](../master/python/data-structures/heaps.py))
 * randomized queue ([TypeScript](../master/data-structures/RandomizedQueue.ts))
 * red-black tree ([Python](../master/python/data-structures/ll_red_black.py))
 * stack ([Python](../master/python/cracking-coding/stacks_queues/stack.py))
