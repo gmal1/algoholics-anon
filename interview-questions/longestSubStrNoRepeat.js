@@ -30,16 +30,16 @@ function longest(str) {
 
 // same solution, with a Set
 
-// function longest(str) {
+// const lengthOfLongestSubstring = function(s) {
 //   let maxLength = 0;
 //   let left = 0;
 //   let right = 0;
 //   const uniqueChars = new Set();
 
-//   while (right < str.length) {
-//     const currentChar = str[right];
+//   while (right < s.length) {
+//     const currentChar = s[right];
 //     if (uniqueChars.has(currentChar)) {
-//       uniqueChars.delete(currentChar);
+//       uniqueChars.delete(s[left]);
 //       left += 1;
 //     } else {
 //       uniqueChars.add(currentChar);
@@ -48,4 +48,4 @@ function longest(str) {
 //     }
 //   }
 //   return maxLength;
-// }
+// };
