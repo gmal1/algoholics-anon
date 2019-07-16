@@ -27,3 +27,25 @@ function longest(str) {
   }
   return max;
 }
+
+// same solution, with a Set
+
+// function longest(str) {
+//   let maxLength = 0;
+//   let left = 0;
+//   let right = 0;
+//   const uniqueChars = new Set();
+
+//   while (right < str.length) {
+//     const currentChar = str[right];
+//     if (uniqueChars.has(currentChar)) {
+//       uniqueChars.delete(currentChar);
+//       left += 1;
+//     } else {
+//       uniqueChars.add(currentChar);
+//       right += 1;
+//       maxLength = Math.max(maxLength, uniqueChars.size);
+//     }
+//   }
+//   return maxLength;
+// }
