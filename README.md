@@ -53,6 +53,7 @@
 * generate all permutations ([JavaScript](../master/interview-questions/generateAllPerms.js))
 * generate valid parens pairs ([JavaScript](../master/interview-questions/generateParens.js))
 * is unique ([Python](../master/python/cracking-coding/array_strings/is_unique.py))
+* isomorphic strings ([JavaScript](../master/interview-questions/isomorphicStrings.js))
 * kth to last ([Python](../master/python/cracking-coding/linked_list/kth_to_last.py))
 * longest substring with at most k distinct characters ([JavaScript](../master/interview-questions/longestSubstringKDistinct.js))
 * longest substring with no repeating characters ([JavaScript](../master/interview-questions/longestSubStrNoRepeat.js) / [TypeScript](../master/interview-questions/longestSubStrNoRepeat.ts))
