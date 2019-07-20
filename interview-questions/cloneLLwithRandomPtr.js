@@ -20,7 +20,7 @@ Return a deep copy of the list.
 
 function copyRandomList(head) {
   const map = new Map();
-  return traverse(head, map);
+  return traverse(head);
 
   function traverse(node) {
     if (!node) return null;

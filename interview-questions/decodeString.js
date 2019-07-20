@@ -14,34 +14,41 @@ s = "3[a2[c]]", return "accaccacc".
 s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 */
 
-var decodeString = function(s) {
-  let res = '';
-  let k = 1,
-    i = 0;
-  while (i < s.length) {
-    if (Number.isInteger(+s[i])) {
-      let len = 1;
-      while (Number.isInteger(+s[i + len])) len++;
-      k = parseInt(s.substr(i, len));
-      i += len;
-    } else if (s[i] === '[') {
-      let paren = 1;
+function dS(str) {
+  const result = [];
+  let count = 1;
+  let i = 0;
+  while (i < str.length) {
+    const char = str[i];
+    if (Number.isInteger(char)) {
+      let numberLength = 1;
+      while (Number.isInteger(s[i + numberLength])) numberLength++;
+      count = parseInt(str.slice(i, i + numberLength));
+      i += numberLength;
+    } else if (char === '[') {
+      const stack = ['['];
       let j = i + 1;
-      while (paren) {
-        paren += (s[j] === '[') - (s[j] === ']');
+      while (stack.length) {
+        const innerChar = str[j];
+        if (innerChar === '[') {
+          stack.push('[');
+        } else if (innerChar === ']') {
+          stack.pop();
+        }
         j++;
       }
-      res += decodeString(s.substring(i + 1, j - 1)).repeat(k);
-      k = 1;
+      const substr = str.slice(i, j);
+      result.push(...dS(substr)).repeat(count);
+      count = 1;
       i = j;
     } else {
-      res += s[i].repeat(k);
-      k = 1;
-      i++;
+      result.push(char.repeat(count));
+      i += 1;
+      count = 1;
     }
   }
-  return res;
-};
+  return result.join('');
+}
 
 /*
 var decodeString = function(s) {
