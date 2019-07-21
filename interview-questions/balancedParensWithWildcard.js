@@ -15,12 +15,16 @@ function wildParens(str, stack = []) {
       if (top !== '(') return false;
     } else if (char === '*') {
       const removed = str.slice(i + 1);
-      const addedRight = '(' + str.slice(i + 1);
-      const addedLeft = ')' + str.slice(i + 1);
-      return wildParens(removed, [...stack]) || wildParens(addedRight, [...stack]) || wildParens(addedLeft, [...stack]);
+      const addedRight = `(${str.slice(i + 1)}`;
+      const addedLeft = `)${str.slice(i + 1)}`;
+      return (
+        wildParens(removed, [...stack]) ||
+        wildParens(addedRight, [...stack]) ||
+        wildParens(addedLeft, [...stack])
+      );
     }
   }
-  return stack.length === 0 ? true : false;
+  return stack.length === 0;
 }
 
 console.log(wildParens('')); // true

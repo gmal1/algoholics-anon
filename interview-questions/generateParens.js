@@ -1,4 +1,5 @@
 // generate all the valid parens pairs of length n (n pairs)
+
 function generateParens(n, result = []) {
   let rightCount = 0;
   let leftCount = 0;
@@ -9,17 +10,17 @@ function generateParens(n, result = []) {
     }
     if (rightCount < 3) {
       stack.push('(');
-      rightCount++;
+      rightCount += 1;
       helper(stack);
       stack.pop();
-      rightCount--;
+      rightCount -= 1;
     }
     if (leftCount < 3 && leftCount < rightCount) {
       stack.push(')');
-      leftCount++;
+      leftCount += 1;
       helper(stack);
       stack.pop();
-      leftCount--;
+      leftCount -= 1;
     }
   }
   helper([]);

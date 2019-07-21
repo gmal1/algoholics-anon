@@ -18,7 +18,7 @@ function accPerm(array, acc = [], result = []) {
   if (!array.length) {
     return result.push([...acc]);
   }
-  for (let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i += 1) {
     const cand = array[i];
     const localArr = array.slice(0, i).concat(array.slice(i + 1));
     acc.push(cand);

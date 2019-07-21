@@ -1,6 +1,6 @@
 /**
  * given an iterator with next() and hasNext() methods,
- * create a wrapper iteratior ,PeekableInterface which implements
+ * create a wrapper iteratior, PeekableInterface which implements
  * peek(). peek shows the next element that would be returned on next()
  */
 
