@@ -38,7 +38,7 @@ function dS(str) {
         j++;
       }
       const substr = str.slice(i, j);
-      result.push(...dS(substr)).repeat(count);
+      result.push(...dS(substr).repeat(count));
       count = 1;
       i = j;
     } else {
