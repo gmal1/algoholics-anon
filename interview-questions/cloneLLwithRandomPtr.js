@@ -35,7 +35,7 @@ function copyRandomList(head) {
 }
 
 // iterative:
-// var copyRandomList = function(head) {
+// const copyRandomList = function(head) {
 //     if (!head) return null;
 //     const dummy = new Node();
 //     const map = new Map();

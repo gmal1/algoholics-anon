@@ -10,13 +10,13 @@ function moveZeroesRight(arr) {
     const cand = arr[read];
     if (cand !== 0) {
       arr[write] = cand;
-      write++;
+      write += 1;
     }
-    read++;
+    read += 1;
   }
   while (write < arr.length) {
     arr[write] = 0;
-    write++;
+    write += 1;
   }
   return arr;
 }

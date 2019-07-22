@@ -1,7 +1,8 @@
 /*
 Given an integer matrix, find the length of the longest increasing path.
 
-From each cell, you can either move to four directions: left, right, up or down. You may NOT move diagonally or move outside of the boundary (i.e. wrap-around is not allowed).
+From each cell, you can either move to four directions: left, right, up or down. 
+You may NOT move diagonally or move outside of the boundary (i.e. wrap-around is not allowed).
 
 Example 1:
 
@@ -25,22 +26,23 @@ Output: 4
 Explanation: The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
 */
 
-var longestIncreasingPath = function(matrix) {
+const longestIncreasingPath = function(matrix) {
   const map = new Map(); // key: coord, value: longest path known starting at this coord
   let longest = 0;
-  for (let i = 0; i < matrix.length; i++) {
-    for (let j = 0; j < matrix[0].length; j++) {
-      const key = i + '.' + j;
+  for (let i = 0; i < matrix.length; i += 1) {
+    for (let j = 0; j < matrix[0].length; j += 1) {
+      const key = `${i}.${j}`;
       map.set(key, dfs(i, j, new Set()));
     }
   }
   return longest;
 
   function dfs(y, x, visited, len = 0, prevVal = Infinity) {
-    const key = y + '.' + x;
+    const key = `${y}.${x}`;
     if (visited.has(key)) return len;
 
-    if (y < 0 || x < 0 || y >= matrix.length || x >= matrix[0].length) return len;
+    if (y < 0 || x < 0 || y >= matrix.length || x >= matrix[0].length)
+      return len;
     const val = matrix[y][x];
     if (val >= prevVal) return len;
 
@@ -54,7 +56,7 @@ var longestIncreasingPath = function(matrix) {
       dfs(y + 1, x, visited, len + 1, val),
       dfs(y - 1, x, visited, len + 1, val),
       dfs(y, x + 1, visited, len + 1, val),
-      dfs(y, x - 1, visited, len + 1, val),
+      dfs(y, x - 1, visited, len + 1, val)
     );
     visited.delete(key);
 

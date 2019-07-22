@@ -22,7 +22,7 @@ function dS(str) {
     const char = str[i];
     if (Number.isInteger(char)) {
       let numberLength = 1;
-      while (Number.isInteger(s[i + numberLength])) numberLength++;
+      while (Number.isInteger(str[i + numberLength])) numberLength += 1;
       count = parseInt(str.slice(i, i + numberLength));
       i += numberLength;
     } else if (char === '[') {
@@ -35,7 +35,7 @@ function dS(str) {
         } else if (innerChar === ']') {
           stack.pop();
         }
-        j++;
+        j += 1;
       }
       const substr = str.slice(i, j);
       result.push(...dS(substr).repeat(count));
@@ -51,9 +51,9 @@ function dS(str) {
 }
 
 /*
-var decodeString = function(s) {
+const decodeString = function(s) {
     const result = [];
-    
+
     const chunks = outerSlice(s);
     for (let chunk of chunks){
         if(chunk.match(/^[0-9]/)){
@@ -64,7 +64,7 @@ var decodeString = function(s) {
             result.push(chunk);
         }
     }
-    
+
     return result.join('');
 };
 
@@ -85,7 +85,7 @@ function outerSlice(s){
             }
             chunk.push(char)
         }else{
-            
+
         }
     }
 }

@@ -20,42 +20,42 @@ Output: 3
 Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 */
 
-var numDecodings = function(s) {
-  if (!s && s.length == 0) return 0;
+const numDecodings = function(s) {
+  if (!s && !s.length) return 0;
 
-  let mem = new Map();
+  const mem = new Map();
 
   const generate = idx => {
     let result = 0;
 
-    //if we get to the end, it is a valid way
-    if (idx == s.length) {
+    // if we get to the end, it is a valid way
+    if (idx === s.length) {
       return 1;
     }
 
-    //memo
+    // memo
     if (mem.has(idx)) return mem.get(idx);
 
-    //first decision
-    //is the one letter string from this position valid?
-    //if so move pointer one ahead
+    // first decision
+    // is the one letter string from this position valid?
+    // if so move pointer one ahead
     if (s[idx] < 27 && s[idx] > 0) {
       result += generate(idx + 1);
     }
 
-    //second decision is if the two letter string is also valid
-    //move the pointer and recurse
+    // second decision is if the two letter string is also valid
+    // move the pointer and recurse
     if (idx + 1 < s.length) {
-      //get two letter string from position idx
-      let sub = s.substring(idx, idx + 2);
+      // get two letter string from position idx
+      const sub = s.substring(idx, idx + 2);
 
-      //if valid move pointer 2 ahead and recure
-      if (sub < 27 && sub > 0 && sub.charAt(0) != '0') {
+      // if valid move pointer 2 ahead and recure
+      if (sub < 27 && sub > 0 && sub.charAt(0) !== '0') {
         result += generate(idx + 2);
       }
     }
 
-    //set the result in the memo table
+    // set the result in the memo table
     mem.set(idx, result);
     return result;
   };
