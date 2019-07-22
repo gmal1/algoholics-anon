@@ -21,8 +21,7 @@ function solveKnapsack(items, weightAvailable) {
         // current weight. we find the max possible value at that capacity at the index
         // corresponding to the difference between the current capacity and the weight
         // of the current item
-        const maxValueWithCurrentItem =
-          currentItem.value + knapsack[currentWeight - currentItem.weight];
+        const maxValueWithCurrentItem = currentItem.value + knapsack[currentWeight - currentItem.weight];
         // update the max possible value if taking the current item
         // is greater than the max possible value so far
         maxPossibleValue = Math.max(maxValueWithCurrentItem, maxPossibleValue);
@@ -31,14 +30,25 @@ function solveKnapsack(items, weightAvailable) {
 
     // update knapsack with the max possible value at each capacity
     knapsack[currentWeight] = maxPossibleValue;
+    // console.log(knapsack)
   }
-
   return knapsack[weightAvailable];
 }
 
-const stuff = [
-  { weight: 2, value: 50 },
-  { weight: 3, value: 100 },
-  { weight: 5, value: 140 },
-];
+function ks(options, target) {
+  const dp = new Array(options.length + 1).fill(null).map(el => (el = new Array(target + 1).fill(0)));
+  // console.log(dp);
+  for (let i = 1; i < options.length + 1; i++) {
+    const option = options[i - 1];
+    for (let j = option.weight; j <= target; j++) {
+      const ignore = dp[i - 1][j];
+      const use = option.weight <= j ? dp[i][j - option.weight] + option.value : 0;
+      dp[i][j] = Math.max(ignore, use);
+    }
+  }
+  return dp[options.length][target];
+}
+
+const stuff = [{ weight: 2, value: 50 }, { weight: 3, value: 100 }, { weight: 5, value: 140 }];
 console.log(solveKnapsack(stuff, 17)); // returns 550
+ks(stuff, 17);
