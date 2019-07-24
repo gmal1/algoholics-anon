@@ -1,4 +1,4 @@
-// insertion
+// insertion sort
 function insertionSort(arr, range = [0, arr.length]) {
   for (let i = range[0] + 1; i < range[1]; i++) {
     const cand = arr[i];
