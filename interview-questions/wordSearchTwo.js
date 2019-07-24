@@ -9,6 +9,7 @@ if it is, push it into results
 regardless, continue the search and mark the cells you've visited
 unmark them before returning to the parent stack frame
 */
+
 function findWords(board, words) {
   const root = buildTrie(words);
   let res = [];
