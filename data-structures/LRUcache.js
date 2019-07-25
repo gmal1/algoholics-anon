@@ -2,42 +2,42 @@
 // https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/
 
 class LRU {
-  // the list will have cap # of elements
-  // each item in the list will have a position in the list and an index in the input string
-  constructor(cap) {
-    this.capacity = cap;
-    this.size = 0;
-    this.cache = new DblLinkedList();
+  constructor(capacity = 5) {
+    this.list = new DblLinkedList();
     this.map = new Map();
+    this.size = 0;
+    this.capacity = capacity;
   }
 
-  addElement(char, idx) {
-    console.log('adding: ', char);
-    // if the char is in the cache, just update its location in the list and its node's idx
-    if (this.map.has(char)) {
-      const charNode = this.map.get(char);
-      this.cache.use(charNode, idx);
-    } else {
-      // if the cache is at capacity, evict the LRU node and push the new node
-      if (this.isFull()) {
-        console.log('evicting a char...');
-
-        const evictedNode = this.cache.evict();
-        this.map.delete(evictedNode.char);
-      } else {
-        this.size += 1;
-      }
-      const node = this.cache.push(char, idx);
-      this.map.set(char, node);
+  addElement(key, val) {
+    if (this.map.has(key)) {
+      const node = this.getElement(key);
+      node.val = val;
+      return node;
     }
+    const node = new Node(key, val);
+    if (this.isFull()) {
+      const evictedNode = this.list.tail.prev;
+      this.list.remove(evictedNode);
+      this.map.delete(evictedNode.key);
+    } else {
+      this.size += 1;
+    }
+    const entry = this.map.set(key, node);
+    this.list.add(node);
   }
 
-  getLRUnode() {
-    return this.cache.getLeastRecentlyUsed();
+  getElement(key) {
+    if (!this.map.has(key)) return null;
+    const node = this.map.get(key);
+    this.list.remove(node);
+    this.list.add(node);
+    return node;
   }
 
-  removeLRUnode() {
-    return this.cache.evict();
+  peakLeastRecentlyUsed() {
+    if (this.size === 0) return null;
+    return this.list.tail.prev;
   }
 
   isFull() {
@@ -45,67 +45,50 @@ class LRU {
   }
 }
 
+class DblLinkedList {
+  constructor() {
+    this.head = new Node(null);
+    this.tail = new Node(null);
+    this.head.next = this.tail;
+    this.tail.prev = this.head;
+  }
+
+  add(node) {
+    const oldFirst = this.head.next;
+    oldFirst.prev = node;
+    this.head.next = node;
+    node.next = oldFirst;
+    node.prev = this.head;
+  }
+
+  remove(node) {
+    node.prev.next = node.next;
+    node.next.prev = node.prev;
+  }
+}
+
 class Node {
-  constructor(char, idx) {
-    this.char = char;
-    this.idx = idx;
+  constructor(key, val) {
+    this.key = key;
+    this.val = val;
     this.next = null;
     this.prev = null;
   }
 }
 
-class DblLinkedList {
-  constructor() {
-    this.head = new Node(null, null);
-    this.tail = new Node(null, null);
-    this.head.next = this.tail;
-    this.tail.prev = this.head;
-  }
-
-  // tail node will be the least recently used
-  // new nodes go to the head
-  // return the node so a reference can be added to the map
-  push(char, idx) {
-    const node = new Node(char, idx);
-    node.next = this.head.next;
-    node.prev = this.head;
-
-    this.head.next = node;
-    node.next.prev = node;
-
-    return node;
-  }
-
-  // move node to the head
-  use(node, newIdx = node.idx) {
-    this.remove(node);
-    this.push(node.char, newIdx);
-  }
-
-  // remove the node from the LL
-  remove(node) {
-    node.prev.next = node.next;
-    node.next.prev = node.prev;
-    return node;
-  }
-
-  getLeastRecentlyUsed() {
-    return this.tail.prev;
-  }
-
-  // evict the LRU node
-  evict() {
-    const node = this.getLeastRecentlyUsed();
-    console.log('char being evicted: ', node.char);
-    return this.remove(node);
-  }
-}
-
 const test = new LRU(3);
 
-const str = 'dcccdbaeabc';
+const str = 'dcccdbaeabeeec';
 let i = 0;
 for (const el of str) {
   test.addElement(el, i);
   i += 1;
+}
+let node = test.list.head;
+while (node) {
+  if (node.val) {
+    console.log(node.key); // c, e, b
+    console.log(node.val); // 13, 12, 9
+  }
+  node = node.next;
 }
