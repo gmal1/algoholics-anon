@@ -23,9 +23,10 @@ Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 var numDecodings = function(s) {
   if (!s && s.length == 0) return 0;
 
-  let mem = new Map();
+  const mem = new Map();
+  return generate(0, s);
 
-  const generate = idx => {
+  function generate(idx) {
     let result = 0;
 
     //if we get to the end, it is a valid way
@@ -44,12 +45,12 @@ var numDecodings = function(s) {
     }
 
     //second decision is if the two letter string is also valid
-    //move the pointer and recurse
+    //move the pointer (if not at end of string) and recurse
     if (idx + 1 < s.length) {
       //get two letter string from position idx
       let sub = s.substring(idx, idx + 2);
 
-      //if valid move pointer 2 ahead and recure
+      //if valid move pointer 2 ahead and recurse
       if (sub < 27 && sub > 0 && sub.charAt(0) != '0') {
         result += generate(idx + 2);
       }
@@ -58,7 +59,5 @@ var numDecodings = function(s) {
     //set the result in the memo table
     mem.set(idx, result);
     return result;
-  };
-
-  return generate(0, s);
+  }
 };

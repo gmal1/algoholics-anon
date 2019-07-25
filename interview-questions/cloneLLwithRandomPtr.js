@@ -1,3 +1,5 @@
+import { addEmitHelper } from 'typescript';
+
 /**
 leetcode 138: Copy List with Random Pointer
 https://leetcode.com/problems/copy-list-with-random-pointer/
@@ -55,3 +57,19 @@ function copyRandomList(head) {
 
 //     return dummy.next;
 // };
+
+function c(node) {
+  const map = new Map();
+  return helper(node);
+
+  function helper(node) {
+    if (!node) return;
+    if (!map.has(node)) {
+      const newNode = new Node(node.val);
+      map.set(node, newNode);
+      newNode.next = helper(node.next);
+      newNode.random = helper(node.random);
+    }
+    return map.get(node);
+  }
+}
