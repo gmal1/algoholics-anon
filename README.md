@@ -1,3 +1,6 @@
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/gmal1/algoholics-anon/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/gmal1/algoholics-anon/pulls)
+
 ## Algorithms
 ### Searching:
 * binary search ([TypeScript](../master/algorithms/search/binarySearch.ts) / [JavaScript](../master/algorithms/search/binarySearch.js))
@@ -37,6 +40,7 @@
 * randomized queue ([TypeScript](../master/data-structures/RandomizedQueue.ts))
 * red-black tree ([Python](../master/python/data-structures/ll_red_black.py))
 * stack ([Python](../master/python/cracking-coding/stacks_queues/stack.py))
+* trie ([JavaScript](../master/data-structures/trie.js))
 
 ## Interview questions
 * animal shelter ([Python](../master/python/cracking-coding/stacks_queues/animal_shelter.py))
@@ -84,6 +88,7 @@
 * set of stacks ([Python](../master/python/cracking-coding/stacks_queues/set_of_stacks.py))
 * shortest path ([JavaScript](../master/interview-questions/shortestPath.js))
 * sort stack ([Python](../master/python/cracking-coding/stacks_queues/sort_stack.py))
+* spiral matrix ([JavaScript](../master/interview-questions/spiralMatrix.js))
 * stack min ([Python](../master/python/cracking-coding/stacks_queues/stack_min.py))
 * string compression ([Python](../master/python/cracking-coding/array_strings/str_compression.py))
 * string rotation ([Python](../master/python/cracking-coding/array_strings/string_rotation.py))
@@ -97,5 +102,6 @@
 * two sum ([JavaScript](../master/interview-questions/twoSum.js) / [TypeScript](../master/interview-questions/twoSum.ts))
 * unbounded knapsack ([JavaScript](../master/interview-questions/unboundedKnapsack.js))
 * urlify ([Python](../master/python/cracking-coding/array_strings/urlify.py))
+* word search II ([JavaScript](../master/interview-questions/wordSearchTwo.js))
 * wrap text ([Kotlin](../master/interview-questions/wrapText.kt))
 * zero matrix ([Python](../master/python/cracking-coding/array_strings/zero_matrix.py))

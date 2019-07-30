@@ -1,7 +1,7 @@
 {
   "name": "algoholics-anon",
   "version": "1.0.0",
-  "description": "algos yo",
+  "description": "algorithms, data structures, and interview questions",
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/ChristianEdwardPadilla/algoholics-anon.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ChristianEdwardPadilla/algoholics-anon/issues"
   },
