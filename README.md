@@ -53,6 +53,7 @@
 * bucket fill ([JavaScript](../master/interview-questions/colorPixels.js))
 * check if given string is interleaving of two strings ([JavaScript](../master/interview-questions/isInterleaved.js))
 * check permutation ([Python](../master/python/cracking-coding/array_strings/is_perm.py))
+* climb steps ([JavaScript](..//master/interview-questions/countWays.js))
 * clone linked list with random pointer / https://leetcode.com/problems/copy-list-with-random-pointer/ ([JavaScript](../master/interview-questions/cloneLLwithRandomPtr.js))
 * construct a BST of minimal height ([JavaScript](../master/interview-questions/minHeightBST.js))
 * decode string ([JavaScript](../master/interview-questions/decodeString.js))
