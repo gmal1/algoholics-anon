@@ -11,6 +11,7 @@ function fill(screen, coord, newColor) {
   if (targetColor === newColor) return screenClone;
   // console.log(screenClone);
   return dfs(screenClone, coord);
+
   function dfs(s, c) {
     if (c[0] >= s.length || c[1] >= s[0].length || c[0] < 0 || c[1] < 0) return;
     if (s[c[0]][c[1]] !== targetColor) return;

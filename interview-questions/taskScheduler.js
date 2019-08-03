@@ -1,18 +1,19 @@
 /*
-Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent different tasks. Tasks could be done without original order. Each task could be done in one interval. For each interval, CPU could finish one task or just be idle.
+Given a char array representing tasks CPU need to do. It contains capital letters
+A to Z where different letters represent different tasks.
+Tasks could be done without original order. Each task could be done in one interval.
+For each interval, CPU could finish one task or just be idle.
 
-However, there is a non-negative cooling interval n that means between two same tasks, there must be at least n intervals that CPU are doing different tasks or just be idle.
+However, there is a non-negative cooling interval n that means between two same tasks,
+there must be at least n intervals that CPU are doing different tasks or just be idle.
 
 You need to return the least number of intervals the CPU will take to finish all the given tasks.
-
- 
 
 Example:
 
 Input: tasks = ["A","A","A","B","B","B"], n = 2
 Output: 8
 Explanation: A -> B -> idle -> A -> B -> idle -> A -> B.
- 
 
 Note:
 
@@ -29,27 +30,27 @@ The integer n is in the range [0, 100].
 // A B idle
 // A B
 
-// We only care about the task(s) with the highest frequency in order to satisfy the requirement. The rest of the space is filled by either less frequent tasks or idle slots or both. 
+// We only care about the task(s) with the highest frequency in order to satisfy the requirement. The rest of the space is filled by either less frequent tasks or idle slots or both.
 // We start by pretending the rest of the space is occupied by idle slots, and the way to calculate that is: (maxFrequency - 1) * n
 // If we have more than enough other tasks to fill these idle slots, then great, we will take no. of tasks as the answer
 // One caveat is that there may be more than one task that shares this max frequency, and in which case we need to count those tasks in the last row of the chart
 
-var leastInterval = function(tasks, n) {
+function leastInterval(tasks, n) {
     // use map to find the task(s) with the max frequency
     let map = {};
     tasks.forEach(task => map[task] = map[task]+1 || 1);
     let maxFreq = 0;
     for (task in map) {
-        maxFreq = Math.max(map[task], maxFreq);
+      maxFreq = Math.max(map[task], maxFreq);
     }
 	// In case there are more than one task with this maxFreq, we need to add them to the last row
     let sameMaxFreq = 0;
     for (task in map) {
-        if (map[task] === maxFreq) {
-            sameMaxFreq++;
-        }
-    }    
-    return Math.max(tasks.length, maxFreq + n*(maxFreq - 1) + sameMaxFreq - 1)   
+      if (map[task] === maxFreq) {
+        sameMaxFreq++;
+      }
+    }
+    return Math.max(tasks.length, maxFreq + n*(maxFreq - 1) + sameMaxFreq - 1)
 };
 
 

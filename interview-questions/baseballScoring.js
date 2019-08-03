@@ -31,8 +31,8 @@ console.log(b(7)); // 56
 
 function bottomUp(n) {
   if (n < 0) return 0;
-  let result = [0, 0, 0, 1];
-  for (let i = 1; i <= n; i++) {
+  const result = [0, 0, 0, 1];
+  for (let i = 1; i <= n; i += 1) {
     const runs = result.reduce((acc, el) => acc + el, 0);
     result[0] = result[1];
     result[1] = result[2];

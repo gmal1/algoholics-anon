@@ -1,5 +1,6 @@
 /*
-Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
+Given an array of integers, find the sum of the elements between indices i and j (i ≤ j),
+inclusive.
 
 Example:
 Given nums = [-2, 0, 3, -5, 2, -1]
@@ -23,7 +24,6 @@ class Solution {
     this.arr.forEach((el, i) => {
       result.push(el + (result[i - 1] || 0));
     });
-    // console.log(result);
     return result;
   }
 
