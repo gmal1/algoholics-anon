@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/isomorphic-strings/
 // return true if two strings are isomorphic, i.e. it's possible to make one string
 // into the other by replacing every occurence of a character with a different character
 // e.g. strings 'abab' and 'cdcd' are isomorphic, and 'abcd' / 'efgg' are not.
