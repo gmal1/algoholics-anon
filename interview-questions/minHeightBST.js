@@ -1,4 +1,5 @@
 // given an array of sorted elements construct a BST of minimal height
+// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
 const BST = require('../data-structures/BST.js');
 
 function BSThelper(arr, start, end) {

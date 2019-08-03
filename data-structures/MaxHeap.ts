@@ -9,6 +9,10 @@ class MaxHeap {
     this.swim(this.arr.length - 1);
   }
 
+  peakMax(): number{
+    return this.arr[1];
+  }
+
   delMax(): number {
     const max = this.arr[1];
     this.arr[1] = this.arr.pop();
