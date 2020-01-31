@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "husky": "4.2.1",
-    "jest": "24.9.0",
+    "jest": "25.1.0",
     "ts-jest": "25.1.0",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   }
 }
