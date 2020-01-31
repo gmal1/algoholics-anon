@@ -1,5 +1,11 @@
 {
-  "extends": [
-    "config:base"
+  "extends": ["config:base"],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "automerge": true
+    }
   ]
 }
