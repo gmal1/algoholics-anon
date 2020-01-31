@@ -3,9 +3,5 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "packageRules": [
-    {
-      "automerge": true
-    }
-  ]
+    "automerge": true
 }
