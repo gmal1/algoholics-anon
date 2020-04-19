@@ -81,6 +81,7 @@
 * palindrome permutation ([Python](../master/python/cracking-coding/array_strings/palin_perm.py))
 * partition linked list ([Python](../master/python/cracking-coding/linked_list/partition.py))
 * peek from iterator ([JavaScript](../master/interview-questions/peekFromIterator.js))
+* pig latin translator ([JavaScript](../master/interview-questions/pigLatin.js))
 * push to end ([JavaScript](../master/interview-questions/pushToEnd.js))
 * queue via stacks ([Python](../master/python/cracking-coding/stacks_queues/queue_w_stacks.py))
 * reverse linked list ([JavaScript](../master/interview-questions/reverseLinkedList.js))
