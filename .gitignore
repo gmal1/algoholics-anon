@@ -63,3 +63,5 @@ typings/
 dailyTasks
 
 node_modules/
+
+.vscode/*
