@@ -30,6 +30,6 @@
     "husky": "4.2.5",
     "jest": "25.3.0",
     "ts-jest": "25.4.0",
-    "typescript": "3.8.3"
+    "typescript": "3.9.5"
   }
 }
